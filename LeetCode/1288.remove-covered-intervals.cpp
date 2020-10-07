@@ -12,7 +12,7 @@ public:
     int removeCoveredIntervals(vector<interval>& intervals) {
         sort(intervals.begin(), intervals.end(), comparator);
         int ans = intervals.size();
-        
+
         int maxEnd = 0;
 
         for(interval cur: intervals) {
@@ -21,10 +21,10 @@ public:
             if (curEnd <= maxEnd) {
                 ans--; // throw away the current interval
             }
-            
+
             maxEnd = max(maxEnd, curEnd);
         }
-        
+
         return ans;
     }
 };
