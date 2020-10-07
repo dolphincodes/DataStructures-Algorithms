@@ -1,17 +1,17 @@
-#include<deque>
+#include <deque>
 
 class RecentCounter {
-    deque<int> req;
-public:
-    RecentCounter() {
-        req = {};
-    }
+  deque<int> req;
 
-    int ping(int t) {
-        req.push_back(t);
-        while(req.front() < t-3000) req.pop_front();
-        return req.size();
-    }
+public:
+  RecentCounter() { req = {}; }
+
+  int ping(int t) {
+    req.push_back(t);
+    while (req.front() < t - 3000)
+      req.pop_front();
+    return req.size();
+  }
 };
 
 /**
